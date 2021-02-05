@@ -357,3 +357,118 @@ template {
   line-height: 22px;
   font-family: "PT Mono", "Courier New", monospace;
   color: #666666; }
+
+.page-header {
+  position: relative;
+  padding-top: 33px;
+  padding-bottom: 33px; }
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #1b2d37; }
+  @media (max-width: 1023px) {
+    .page-header {
+      padding-top: 20px;
+      padding-bottom: 20px; } }
+  @media (max-width: 767px) {
+    .page-header {
+      padding-top: 15px;
+      padding-bottom: 15px; } }
+
+.page-header__wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1440px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  @media (max-width: 1023px) {
+    .page-header__wrapper {
+      margin-right: 0;
+      margin-left: 0;
+      padding-left: 25px;
+      padding-right: 25px;
+      max-width: none; } }
+  @media (max-width: 767px) {
+    .page-header__wrapper {
+      padding-left: 15px;
+      padding-right: 15px; } }
+
+.page-header a {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 42px;
+  min-width: 180px;
+  line-height: 18px;
+  color: #ffffff; }
+  .page-header a[href]:hover, .page-header a[href]:focus {
+    opacity: 0.6; }
+  .page-header a[href]:active {
+    opacity: 0.3; }
+  .page-header a:first-of-type {
+    margin-right: auto; }
+  .page-header a:last-of-type {
+    margin-right: 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: block;
+    width: 180px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid #ffffff;
+    border-radius: 5px; }
+  @media (max-width: 1023px) {
+    .page-header a {
+      margin-right: 30px;
+      min-width: 0; }
+      .page-header a:nth-last-of-type(2) {
+        margin-right: 0; }
+      .page-header a:last-of-type {
+        display: none; } }
+  @media (max-width: 767px) {
+    .page-header a {
+      margin-right: 22px; } }
+
+@media (max-width: 1023px) {
+  .page-header span {
+    display: none; } }
+
+.page-header svg {
+  margin-right: 12px;
+  color: #00b2ff;
+  vertical-align: middle; }
+  @media (max-width: 1023px) {
+    .page-header svg {
+      margin-right: 0;
+      width: 26px;
+      height: 24px; } }
+
+@media (max-width: 767px) {
+  .page-header img {
+    width: 38px;
+    height: 38px; } }
