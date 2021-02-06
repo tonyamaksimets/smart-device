@@ -1,0 +1,23 @@
+.social {
+  @include list-style-reset;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 112px;
+}
+
+.social a {
+  @include link-style-reset;
+
+  color: $light-icon-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

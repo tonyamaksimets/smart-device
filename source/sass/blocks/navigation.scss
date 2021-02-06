@@ -1,0 +1,147 @@
+.navigation {
+  @media (max-width: $tablet-only-width) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    position: relative;
+
+    padding-top: 30px;
+    padding-bottom: 26px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+
+    border-bottom: 1px solid rgba($dark-border-color, 0.2);
+  }
+}
+
+.navigation p {
+  @include paragraph-style-reset;
+
+  margin-bottom: 26px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $dark-text-color;
+
+  @media (max-width: $mobile-only-width) {
+    margin-bottom: 0;
+  }
+}
+
+.navigation button {
+  @include button-style-reset;
+
+  display: none;
+
+  @media (max-width: $mobile-only-width) {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: block;
+    height: 16px;
+
+    color: $dark-icon-color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+.navigation--nojs button {
+  display: none;
+}
+
+.navigation svg {
+  &:first-child {
+    display: block;
+  }
+
+  &:last-child {
+    display: none;
+  }
+}
+
+.navigation--opened svg {
+  &:first-child {
+    display: none;
+  }
+
+  &:last-child {
+    display: block;
+  }
+}
+
+.navigation ul {
+  @include list-style-reset;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 100px;
+
+  @media (max-width: $tablet-only-width) {
+    max-height: none;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    margin-top: 26px;
+    display: none;
+  }
+}
+
+.navigation--nojs ul {
+  flex-wrap: nowrap;
+  max-height: none;
+}
+
+.navigation--opened ul {
+  display: block;
+}
+
+.navigation li {
+  padding-right: 65px;
+
+  @media (max-width: $tablet-only-width) {
+    padding-right: 0;
+  }
+}
+
+.navigation--nojs li {
+  padding-right: auto;
+}
+
+.navigation a {
+  @include link-style-reset;
+
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba($dark-text-color, 0.5);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

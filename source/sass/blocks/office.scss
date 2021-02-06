@@ -1,0 +1,142 @@
+.office {
+  margin-left: 20px;
+
+  @media (max-width: $tablet-only-width) {
+    margin-left: 0;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    position: relative;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 30px;
+    width: 100%;
+  }
+}
+
+.office h2 {
+  @include title-style-reset;
+
+  margin-bottom: 26px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $dark-text-color;
+
+  @media (max-width: $mobile-only-width) {
+    margin-bottom: 0;
+  }
+}
+
+.office button {
+  @include button-style-reset;
+
+  display: none;
+
+  @media (max-width: $mobile-only-width) {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: block;
+    height: 16px;
+
+    color: $dark-icon-color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+.office--nojs button {
+  display: none;
+}
+
+.office svg {
+  &:first-child {
+    display: block;
+  }
+
+  &:last-child {
+    display: none;
+  }
+}
+
+.office--opened svg {
+  &:first-child {
+    display: none;
+  }
+
+  &:last-child {
+    display: block;
+  }
+}
+
+.office p {
+  @include paragraph-style-reset;
+
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba($dark-text-color, 0.5);
+
+  @media (max-width: $mobile-only-width) {
+    margin-top: 26px;
+    display: none;
+  }
+}
+
+.office--opened p {
+  display: block;
+}
+
+.office ul {
+  @include list-style-reset;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobile-only-width) {
+    display: none;
+  }
+}
+
+.office--opened ul {
+  display: block;
+}
+
+.office a {
+  @include link-style-reset;
+
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba($dark-text-color, 0.5);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
