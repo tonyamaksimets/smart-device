@@ -1,0 +1,157 @@
+.company {
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 80px;
+  padding-bottom: 110px;
+  padding-left: 220px;
+  padding-right: 30px;
+  max-width: 1230px;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 80px;
+    left: 10px;
+
+    width: 220px;
+    height: 317px;
+    display: block;
+
+    background-image: url("../img/2005@1x.png");
+    background-size: cover;
+  }
+
+  @media (min-resolution: 2dppx) {
+    &::before {
+      background-image: url("../img/2005@2x.png");
+    }
+  }
+
+  @media (max-width: $tablet-only-width) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    padding-left: 210px;
+    width: 100%;
+
+    &::before {
+      top: 22px;
+      left: 0;
+
+      width: 244px;
+      height: 362px;
+    }
+  }
+
+  @media (max-width: $mobile-only-width) {
+    padding-top: 40px;
+    padding-bottom: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.company h2 {
+  @include title-style-reset;
+
+  margin-bottom: 20px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 36px;
+  line-height: 51px;
+
+  @media (max-width: $tablet-only-width) {
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+.company p {
+  @include paragraph-style-reset;
+
+  &:first-of-type {
+    margin-bottom: 20px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $tablet-only-width) {
+    &:last-of-type {
+      margin-bottom: 44px;
+    }
+  }
+
+  @media (max-width: $mobile-only-width) {
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.company span {
+  &:first-of-type {
+    display: none;
+  }
+
+  @media (max-width: $tablet-only-width) {
+    &:first-of-type {
+      display: inline;
+    }
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+}
+
+.company a {
+  @include link-style-reset;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: block;
+  width: 178px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $accent-color;
+
+  background-color: $basic-background-color;
+  border: 1px solid $accent-color;
+  border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    color: $light-text-color;
+    background-color: $accent-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
