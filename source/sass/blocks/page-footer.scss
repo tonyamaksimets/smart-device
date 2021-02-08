@@ -135,7 +135,12 @@
   }
 
   @media (max-width: $mobile-only-width) {
-    margin-bottom: 30px;
+    &:last-of-type {
+      margin-bottom: 30px;
+      width: 100%;
+
+      text-align: center;
+    }
   }
 }
 

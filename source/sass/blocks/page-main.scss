@@ -1,0 +1,218 @@
+.page-main__wrapper {
+  position: relative;
+
+  padding-left: calc(50% - 720px);
+  padding-top: 315px;
+  padding-bottom: 278px;
+
+  background-color: $dark-background-color;
+  background-image: url("../img/circuit@1x.png"),
+    url("../img/background-1.svg"),
+    url("../img/background@1x.png");
+  background-size: auto, auto, cover;
+  background-position: calc(40% + 560px) 260px, calc(50% + 415px) 120px, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+
+  overflow: hidden;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/circuit@2x.png"),
+      url("../img/background-1.svg"),
+      url("../img/background@2x.png");
+  }
+
+  @media (max-width: $tablet-only-width) {
+    padding-top: 190px;
+    padding-bottom: 162px;
+    padding-left: 88px;
+
+    background-size: 465px 340px, 520px auto, cover;
+    background-position: 510px 110px, 440px -35px, center;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    padding-top: 285px;
+    padding-bottom: 70px;
+    padding-left: 11px;
+    padding-right: 11px;
+
+    background-size: 301px 220px, 520px auto, cover;
+    background-position: 30px 90px, 150px -50px, center;
+  }
+}
+
+.page-main h1 {
+  @include title-style-reset;
+
+  margin-bottom: 28px;
+  margin-left: 20px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $light-text-color;
+
+  @media (max-width: $tablet-only-width) {
+    margin-left: 0;
+    width: 470px;
+
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    width: 100%;
+
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+.page-main__wrapper p {
+  @include paragraph-style-reset;
+
+  position: relative;
+
+  margin-left: 20px;
+  margin-bottom: 42px;
+  padding-left: 94px;
+  width: 650px;
+
+  font-size: 22px;
+  line-height: 34px;
+  color: $light-text-color;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 15px;
+
+    display: block;
+    height: 2px;
+    width: 66px;
+
+    background-color: $basic-background-color;
+  }
+
+  @media (max-width: $tablet-only-width) {
+    margin-left: 0;
+    margin-bottom: 52px;
+    padding-left: 48px;
+    width: 360px;
+
+    font-size: 18px;
+    line-height: 30px;
+
+    &::before {
+      width: 33px;
+    }
+  }
+
+  @media (max-width: $mobile-only-width) {
+    margin-bottom: 40px;
+    width: 100%;
+    box-sizing: border-box;
+
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.page-main__wrapper a {
+  @include link-style-reset;
+
+  &:first-of-type {
+    margin-left: 114px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    display: block;
+    width: 407px;
+
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: bold;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $light-text-color;
+
+    background-color: $accent-color;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      background-color: $basic-background-color;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &:last-of-type {
+    position: absolute;
+    bottom: 135px;
+
+    margin-left: -25px;
+    display: block;
+    width: 110px;
+
+    font-size: 14px;
+    line-height: 16px;
+    color: $light-text-color;
+
+    opacity: 0.5;
+    transform: rotate(-90deg);
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  @media (max-width: $tablet-only-width) {
+    &:first-of-type {
+      margin-left: 48px;
+      width: 380px;
+    }
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mobile-only-width) {
+    &:first-of-type {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.page-main__wrapper span {
+  &:last-child {
+    display: none;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    &:first-child {
+      display: none;
+    }
+
+    &:last-child {
+      display: inline;
+    }
+  }
+}
+
+

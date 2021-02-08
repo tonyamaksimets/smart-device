@@ -1,6 +1,6 @@
 .page-body {
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: 1fr min-content;
 
   min-height: 100%;
 
@@ -10,4 +10,15 @@
   line-height: 22px;
   font-family: "PT Mono", "Courier New", monospace;
   color: $basic-text-color;
+}
+
+.page-body header {
+  position: absolute;
+  z-index: 1;
+
+  width: 100%;
+
+  &::before {
+    display: none;
+  }
 }
