@@ -1,14 +1,21 @@
 .page-main {
   background-image: url("../img/background-2.svg");
-  background-size: cover;
-  background-position: 880px center;
+  background-position: center 845px;
   background-repeat: no-repeat;
+
+  @media (max-width: $tablet-only-width) {
+    background-position: -350px 600px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    background-position: -680px 1120px;
+  }
 }
 
 .page-main__wrapper {
   position: relative;
 
-  padding-left: calc(50% - 720px);
+  padding-left: calc(50% - 728px);
   padding-top: 315px;
   padding-bottom: 278px;
 
@@ -17,7 +24,7 @@
     url("../img/background-1.svg"),
     url("../img/background@1x.png");
   background-size: auto, auto, cover;
-  background-position: calc(40% + 560px) 260px, calc(50% + 415px) 120px, center;
+  background-position: calc(40% + 555px) 260px, calc(50% + 405px) 120px, center;
   background-repeat: no-repeat, no-repeat, no-repeat;
 
   overflow: hidden;

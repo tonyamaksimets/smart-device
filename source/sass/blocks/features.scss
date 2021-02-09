@@ -1,0 +1,130 @@
+.features {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 90px;
+  max-width: 1170px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (max-width: $tablet-only-width) {
+    margin-top: 34px;
+    padding-left: 20px;
+    padding-right: 25px;
+    max-width: none;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    margin-top: 17px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.features ul {
+  @include list-style-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.features__feature {
+  margin-bottom: 30px;
+  padding-left: 45px;
+  padding-right: 40px;
+  padding-top: 40px;
+  padding-bottom: 64px;
+  width: calc((100% - 30px) / 2);
+  min-height: 299px;
+  box-sizing: border-box;
+
+  background-color: $basic-background-color;
+  border-top: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  border-left: 3px solid $accent-color;
+
+  &:hover {
+    background-color: $accent-color;
+    border-top: 1px solid $accent-color;
+    border-right: 1px solid $accent-color;
+    border-bottom: 1px solid $accent-color;
+  }
+
+  @media (max-width: $tablet-only-width) {
+    padding-left: 27px;
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    min-height: 230px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    margin-bottom: 20px;
+    padding-left: 22px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    width: 100%;
+    flex-shrink: 0;
+  }
+}
+
+.features svg {
+  margin-bottom: 15px;
+
+  color: $accent-color;
+
+  @media (max-width: $tablet-only-width) {
+    margin-bottom: 3px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    margin-bottom: 7px;
+  }
+}
+
+.features__feature:hover svg {
+  color: $light-text-color;
+}
+
+.features h3 {
+  @include title-style-reset;
+
+  margin-bottom: 15px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 24px;
+  line-height: 34px;
+  color: $accent-color;
+
+  @media (max-width: $tablet-only-width) {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: $mobile-only-width) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.features__feature:hover h3 {
+  color: $light-text-color;
+}
+
+.features p {
+  @include paragraph-style-reset;
+}
+
+.features__feature:hover p {
+  color: $light-text-color;
+}
+
+.features br {
+  display: none;
+
+  @media (max-width: $mobile-only-width) {
+    display: block;
+  }
+}
+

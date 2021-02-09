@@ -391,8 +391,8 @@ template {
 .page-header__wrapper {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 20px;
-  padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -907,19 +907,24 @@ template {
 
 .page-main {
   background-image: url("../img/background-2.svg");
-  background-size: cover;
-  background-position: 880px center;
+  background-position: center 845px;
   background-repeat: no-repeat; }
+  @media (max-width: 1023px) {
+    .page-main {
+      background-position: -350px 600px; } }
+  @media (max-width: 767px) {
+    .page-main {
+      background-position: -680px 1120px; } }
 
 .page-main__wrapper {
   position: relative;
-  padding-left: calc(50% - 720px);
+  padding-left: calc(50% - 728px);
   padding-top: 315px;
   padding-bottom: 278px;
   background-color: #1b2d37;
   background-image: url("../img/circuit@1x.png"), url("../img/background-1.svg"), url("../img/background@1x.png");
   background-size: auto, auto, cover;
-  background-position: calc(40% + 560px) 260px, calc(50% + 415px) 120px, center;
+  background-position: calc(40% + 555px) 260px, calc(50% + 405px) 120px, center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   overflow: hidden; }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
@@ -1068,7 +1073,7 @@ template {
   margin-right: auto;
   padding-top: 80px;
   padding-bottom: 110px;
-  padding-left: 220px;
+  padding-left: 210px;
   padding-right: 30px;
   max-width: 1230px;
   -webkit-box-sizing: border-box;
@@ -1077,7 +1082,7 @@ template {
     content: "";
     position: absolute;
     top: 80px;
-    left: 10px;
+    left: 5px;
     width: 220px;
     height: 317px;
     display: block;
@@ -1171,3 +1176,116 @@ template {
     background-color: #00b2ff; }
   .company a:active {
     opacity: 0.3; }
+
+.features {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 110px;
+  max-width: 1170px;
+  padding-left: 30px;
+  padding-right: 30px; }
+  @media (max-width: 1023px) {
+    .features {
+      margin-top: 54px;
+      padding-left: 20px;
+      padding-right: 25px;
+      max-width: none; } }
+  @media (max-width: 767px) {
+    .features {
+      margin-top: 37px;
+      padding-left: 15px;
+      padding-right: 15px; } }
+
+.features ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.features__feature {
+  margin-bottom: 30px;
+  padding-left: 45px;
+  padding-right: 40px;
+  padding-top: 40px;
+  padding-bottom: 64px;
+  width: calc((100% - 30px) / 2);
+  min-height: 299px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ffffff;
+  border-top: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  border-left: 3px solid #00b2ff; }
+  .features__feature:hover {
+    background-color: #00b2ff;
+    border-top: 1px solid #00b2ff;
+    border-right: 1px solid #00b2ff;
+    border-bottom: 1px solid #00b2ff; }
+  @media (max-width: 1023px) {
+    .features__feature {
+      padding-left: 27px;
+      padding-top: 24px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      min-height: 230px; } }
+  @media (max-width: 767px) {
+    .features__feature {
+      margin-bottom: 20px;
+      padding-left: 22px;
+      padding-right: 10px;
+      padding-bottom: 25px;
+      width: 100%;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; } }
+
+.features svg {
+  margin-bottom: 15px;
+  color: #00b2ff; }
+  @media (max-width: 1023px) {
+    .features svg {
+      margin-bottom: 3px; } }
+  @media (max-width: 767px) {
+    .features svg {
+      margin-bottom: 7px; } }
+
+.features__feature:hover svg {
+  color: #ffffff; }
+
+.features h3 {
+  margin: 0;
+  font-weight: normal;
+  margin-bottom: 15px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 24px;
+  line-height: 34px;
+  color: #00b2ff; }
+  @media (max-width: 1023px) {
+    .features h3 {
+      margin-bottom: 8px; } }
+  @media (max-width: 767px) {
+    .features h3 {
+      font-size: 20px;
+      line-height: 28px; } }
+
+.features__feature:hover h3 {
+  color: #ffffff; }
+
+.features p {
+  margin: 0; }
+
+.features__feature:hover p {
+  color: #ffffff; }
+
+.features br {
+  display: none; }
+  @media (max-width: 767px) {
+    .features br {
+      display: block; } }
