@@ -1,6 +1,7 @@
 .feedback {
   padding-top: 90px;
   padding-bottom: 110px;
+
   background-color: $accent-color;
   background-image: url("../img/plane@1x.png"),
     url("../img/background-3.svg");
@@ -156,9 +157,12 @@
   background-color: rgba($basic-background-color, 0.1);
   border: none;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: rgba($basic-background-color, 0.3);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $light-border-color;
     outline: none;
   }
 
@@ -201,9 +205,12 @@
 
   resize: none;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: rgba($basic-background-color, 0.3);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $light-border-color;
     outline: none;
   }
 

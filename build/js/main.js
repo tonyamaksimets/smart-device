@@ -1,6 +1,98 @@
 'use strict';
 
 (function () {
+  var buttonOpen = document.querySelector('.page-header a:last-child');
+
+  if (buttonOpen) {
+    var body = document.querySelector('.page-body');
+    var callback = body.querySelector('.callback');
+    var buttonClose = callback.querySelector('button:first-child');
+    var callbackName = callback.querySelector('input[type="text"]');
+    var callbackTel = callback.querySelector('input[type="tel"]');
+    var callbackMessage = callback.querySelector('textarea');
+    var buttonSubmit = callback.querySelector('button[type="submit"]');
+
+    var isStorageSupport = true;
+    var storageName = '';
+    var storageTel = '';
+    var storageMessage = '';
+
+    try {
+      storageName = localStorage.getItem('name');
+      storageTel = localStorage.getItem('email');
+      storageMessage = localStorage.getItem('message');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    var closeCallback = function () {
+      body.classList.remove('page-body--modal-opened');
+      callback.classList.remove('callback--opened');
+
+      document.removeEventListener('keydown', onCallbackEscPress);
+      document.removeEventListener('click', onCallbackOutsideClick);
+      buttonClose.removeEventListener('click', onButtonCloseClick);
+      buttonSubmit.removeEventListener('submit', onButtonSubmitClick);
+    };
+
+    var onCallbackEscPress = function (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        closeCallback();
+      }
+    };
+
+    var onCallbackOutsideClick = function (evt) {
+      if (evt.target.matches('.callback')) {
+        evt.preventDefault();
+        closeCallback();
+      }
+    };
+
+    var onButtonCloseClick = function () {
+      closeCallback();
+    };
+
+    var onButtonSubmitClick = function () {
+      if (isStorageSupport) {
+        localStorage.setItem('name', callbackName.value);
+        localStorage.setItem('tel', callbackTel.value);
+        localStorage.setItem('message', callbackMessage.value);
+      }
+    };
+
+    var openCallback = function (evt) {
+      evt.stopPropagation();
+      body.classList.add('page-body--modal-opened');
+      callback.classList.add('callback--opened');
+
+      if (storageName) {
+        callbackName.value = storageName;
+      }
+
+      if (storageTel) {
+        callbackTel.value = storageTel;
+      }
+
+      if (storageMessage) {
+        callbackMessage.value = storageMessage;
+      }
+
+      callbackName.focus();
+
+      document.addEventListener('keydown', onCallbackEscPress);
+      document.addEventListener('click', onCallbackOutsideClick);
+      buttonClose.addEventListener('click', onButtonCloseClick);
+      buttonSubmit.addEventListener('submit', onButtonSubmitClick);
+    };
+
+    buttonOpen.addEventListener('click', openCallback);
+  }
+})();
+
+'use strict';
+
+(function () {
   var navigation = document.querySelector('.navigation');
   var office = document.querySelector('.office');
 
@@ -28,98 +120,6 @@
     officeButton.addEventListener('click', onOfficeButtonClick);
   }
 })();
-
-// 'use strict';
-
-// (function () {
-//   var sliderControlsList = document.querySelectorAll('.slider-control');
-//   var featuresSlidesList = document.querySelectorAll('.feature-slide');
-
-//   var feedbackLink = document.querySelector('.feedback-link');
-//   var feedback = document.querySelector('.feedback');
-//   var feedbackClose = feedback.querySelector('.close-button');
-//   var feedbackName = feedback.querySelector('.feedback-field-name');
-//   var feedbackEmail = feedback.querySelector('.feedback-field-email');
-//   var feedbackMessage = feedback.querySelector('.feedback-field-message');
-//   var feedbackForm = feedback.querySelector('.feedback-form');
-
-//   var isStorageSupport = true;
-//   var storageName = '';
-//   var storageEmail ='';
-
-//   try {
-//     storageName = localStorage.getItem('name');
-//     storageEmail = localStorage.getItem('email');
-//   } catch (err) {
-//     isStorageSupport = false;
-//   }
-
-//   var addSliderControlClickHandler = function(sliderControl, featuresSlide) {
-//     sliderControl.addEventListener('click', function() {
-//       for (var j = 0; j < sliderControlsList.length; j++) {
-//         sliderControlsList[j].classList.remove('current');
-//         featuresSlidesList[j].classList.remove('current-slide');
-//       };
-
-//       sliderControl.classList.add('current');
-//       featuresSlide.classList.add('current-slide');
-//     });
-//   };
-
-//   for (var i = 0; i < sliderControlsList.length; i++) {
-//     addSliderControlClickHandler(sliderControlsList[i], featuresSlidesList[i]);
-//   }
-
-
-//   feedbackLink.addEventListener('click', function(evt) {
-//     evt.preventDefault();
-//     feedback.classList.add('open-modal');
-
-//     if (storageName && storageEmail) {
-//       feedbackName.value = storageName;
-//       feedbackEmail.value = storageEmail;
-//       feedbackMessage.focus();
-//     } else if (!storageName && !storageEmail) {
-//       feedbackName.focus();
-//     } else if (storageName && !storageEmail) {
-//       feedbackName.value = storageName;
-//       feedbackEmail.focus();
-//     } else {
-//       feedbackEmail = storageEmail;
-//       feedbackName.focus();
-//     }
-//   });
-
-//   feedbackClose.addEventListener('click', function() {
-//     feedback.classList.remove('open-modal');
-//     feedback.classList.remove('error-modal');
-//   });
-
-//   window.addEventListener('keydown', function (evt) {
-//     if (evt.keyCode === 27) {
-//       if (feedback.classList.contains('open-modal')) {
-//         evt.preventDefault();
-//         feedback.classList.remove('open-modal');
-//         feedback.classList.remove('error-modal');
-//       }
-//     }
-//   });
-
-//   feedbackForm.addEventListener('submit', function(evt) {
-//     if (feedbackName.value && feedbackEmail.value && feedbackMessage.value) {
-//       if (isStorageSupport) {
-//         localStorage.setItem('name', feedbackName.value);
-//         localStorage.setItem('email', feedbackEmail.value);
-//       }
-//     } else {
-//       evt.preventDefault();
-//       feedback.classList.remove('error-modal');
-//       feedback.offsetWidth = feedback.offsetWidth;
-//       feedback.classList.add('error-modal');
-//     }
-//   });
-
-// })();
 
 'use strict';
 
@@ -152,7 +152,17 @@
 
 (function () {
   var body = document.querySelector('.page-body');
-  var anchors = body.querySelectorAll('a[href*="#"]');
+  var anchorFeatures = body.querySelector('a[href="#features"]');
+  var anchorFeedback = body.querySelector('a[href="#feedback"]');
+  var anchors = [];
+
+  if (anchorFeatures) {
+    anchors.push(anchorFeatures);
+  }
+
+  if (anchorFeedback) {
+    anchors.push(anchorFeedback);
+  }
 
   if (anchors) {
     anchors.forEach(function (anchor) {

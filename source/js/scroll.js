@@ -2,7 +2,17 @@
 
 (function () {
   var body = document.querySelector('.page-body');
-  var anchors = body.querySelectorAll('a[href*="#"]');
+  var anchorFeatures = body.querySelector('a[href="#features"]');
+  var anchorFeedback = body.querySelector('a[href="#feedback"]');
+  var anchors = [];
+
+  if (anchorFeatures) {
+    anchors.push(anchorFeatures);
+  }
+
+  if (anchorFeedback) {
+    anchors.push(anchorFeedback);
+  }
 
   if (anchors) {
     anchors.forEach(function (anchor) {

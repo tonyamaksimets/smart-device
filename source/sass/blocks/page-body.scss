@@ -10,6 +10,12 @@
   line-height: 22px;
   font-family: "PT Mono", "Courier New", monospace;
   color: $basic-text-color;
+
+  &--modal-opened {
+    position: fixed;
+
+    width: 100%;
+  }
 }
 
 .page-body header {
