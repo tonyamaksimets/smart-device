@@ -96,7 +96,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 100px;
 
   @media (max-width: $tablet-only-width) {
     max-height: none;
@@ -110,7 +109,6 @@
 
 .navigation--nojs ul {
   flex-wrap: nowrap;
-  max-height: none;
 }
 
 .navigation--opened ul {

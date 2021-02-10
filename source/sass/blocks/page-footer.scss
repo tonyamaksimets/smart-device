@@ -54,7 +54,7 @@
 .page-footer__wrapper {
   position: relative;
 
-  margin-right: 50px;
+  margin-right: 40px;
 
   @media (max-width: $tablet-only-width) {
     padding-top: 19px;
@@ -196,5 +196,13 @@
     width: 100%;
 
     text-align: center;
+  }
+}
+
+.page-footer__office {
+  margin-left: 60px;
+
+  @media (max-width: $tablet-only-width) {
+    margin-left: 0;
   }
 }

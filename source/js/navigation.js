@@ -1,22 +1,26 @@
 'use strict';
 
 (function () {
-  var ITEMS_IN_COLUMN = 4;
+  var COLUMNS = 2;
   var navigation = document.querySelector('.navigation');
 
   if (navigation && window.screen.width >= 1024) {
     var items = navigation.querySelectorAll('li');
     var list = navigation.querySelector('ul');
 
-    var columns = Math.ceil(items.length / ITEMS_IN_COLUMN);
+    var itemInColumn = Math.ceil(items.length / COLUMNS);
     var width = 0;
 
-    navigation.classList.remove('navigation--nojs');
-
-    for (var i = 0; i < columns; i++) {
-      width += items[1 + i * ITEMS_IN_COLUMN].offsetWidth;
+    for (var j = items.length - itemInColumn; j < items.length; j++) {
+      items[j].style.paddingRight = 0;
     }
 
+    navigation.classList.remove('navigation--nojs');
+    list.style.maxHeight = itemInColumn * items[0].offsetHeight + 'px';
+
+    for (var i = 0; i < COLUMNS; i++) {
+      width += items[1 + i * itemInColumn].offsetWidth;
+    }
     list.style.width = width + 'px';
   }
 })();
