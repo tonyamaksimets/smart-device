@@ -50,7 +50,6 @@
   }
 
   if (telInputs) {
-    var telCharacter = /^\d$/;
     var preValueLength = TEL_PREFIX_LENGTH;
 
     var onTelInputFocus = function (input) {
@@ -71,7 +70,21 @@
 
     var onTelInputInput = function (input) {
       return function () {
-        if (input.value.length > TEL_PREFIX_LENGTH && !(telCharacter).test(input.value[input.value.length - 1])) {
+        var replasedExpression = [];
+        replasedExpression.push(input.value.slice(TEL_PREFIX_LENGTH, BRACKET_SYMBOL).replace(/\D/g, ''));
+        replasedExpression.push(input.value.slice(BRACKET_SYMBOL + 1).replace(/\D/g, ''));
+        replasedExpression.push(input.value.slice(BRACKET_SYMBOL).replace(/\D/g, ''));
+
+        if (input.value.length > TEL_PREFIX_LENGTH && input.value.length < (BRACKET_SYMBOL + 1) && replasedExpression[0] !== input.value.slice(TEL_PREFIX_LENGTH, BRACKET_SYMBOL)) {
+          input.value = TEL_PREFIX + replasedExpression[0];
+          input.setCustomValidity('Телефон должен содержать только цифры');
+          input.parentNode.classList.add('feedback__field--invalid');
+        } else if (preValueLength === BRACKET_SYMBOL && input.value.length === (BRACKET_SYMBOL + 1) && replasedExpression[2] !== input.value.slice(BRACKET_SYMBOL)) {
+          input.value = input.value.slice(0, BRACKET_SYMBOL) + replasedExpression[2];
+          input.setCustomValidity('Телефон должен содержать только цифры');
+          input.parentNode.classList.add('feedback__field--invalid');
+        } else if (input.value.length > BRACKET_SYMBOL + 1 && replasedExpression[1] !== input.value.slice(BRACKET_SYMBOL + 1)) {
+          input.value = input.value.slice(0, BRACKET_SYMBOL + 1) + replasedExpression[1];
           input.setCustomValidity('Телефон должен содержать только цифры');
           input.parentNode.classList.add('feedback__field--invalid');
         } else if (preValueLength === (TEL_PREFIX_LENGTH + 1) && input.value.length === TEL_PREFIX_LENGTH && input.matches('[required]')) {

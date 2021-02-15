@@ -1,9 +1,9 @@
 'use strict';
 
 (function () {
-  var buttonOpen = document.querySelector('.page-header a:last-child');
+  var buttonsOpen = document.querySelectorAll('.modal-link');
 
-  if (buttonOpen) {
+  if (buttonsOpen) {
     var body = document.querySelector('.page-body');
     var callback = body.querySelector('.callback');
     var buttonClose = callback.querySelector('button:first-child');
@@ -27,6 +27,8 @@
 
     var closeCallback = function () {
       body.classList.remove('page-body--modal-opened');
+      window.scrollTo(0, -body.style.top.slice(0, -2));
+      body.style.top = '';
       callback.classList.remove('callback--opened');
 
       document.removeEventListener('keydown', onCallbackEscPress);
@@ -63,6 +65,7 @@
 
     var openCallback = function (evt) {
       evt.stopPropagation();
+      body.style.top = -window.scrollY + 'px';
       body.classList.add('page-body--modal-opened');
       callback.classList.add('callback--opened');
 
@@ -86,6 +89,8 @@
       buttonSubmit.addEventListener('submit', onButtonSubmitClick);
     };
 
-    buttonOpen.addEventListener('click', openCallback);
+    buttonsOpen.forEach(function (button) {
+      button.addEventListener('click', openCallback);
+    });
   }
 })();

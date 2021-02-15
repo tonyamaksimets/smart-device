@@ -5,7 +5,8 @@
   background-color: $accent-color;
   background-image: url("../img/plane@1x.png"),
     url("../img/background-3.svg");
-  background-position: calc(50% - 355px) 160px, 100% -60px;
+  background-size: 511px 288px, 1891px 765px;
+  background-position: calc(50% - 355px) 160px, calc(50% + 160px) -60px;
   background-repeat: no-repeat, no-repeat;
 
   @media (min-resolution: 2dppx) {
@@ -104,8 +105,6 @@
   align-items: center;
   width: 570px;
 
-  background-color: $accent-color;
-
   @media (max-width: $tablet-only-width) {
     margin-left: 0;
     width: 590px;
@@ -118,6 +117,8 @@
 }
 
 .feedback__field-block {
+  position: relative;
+
   margin-bottom: 41px;
   width: 270px;
 
@@ -182,6 +183,15 @@
     padding-left: 16px;
     padding-top: 14px;
     padding-right: 16px;
+  }
+}
+
+.feedback input[type="checkbox"] {
+  top: 16px;
+  left: 17px;
+
+  @media (max-width: $mobile-only-width) {
+    left: 9px;
   }
 }
 

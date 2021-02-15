@@ -1,20 +1,20 @@
 @font-face {
   font-family: "PT Mono";
-  src: url("../fonts/PTMono-Regular.woff2") format("woff2"), url("../fonts/PTMono-Regular.woff") format("woff");
+  src: url("../fonts/ptmono-regular.woff2") format("woff2"), url("../fonts/ptmono-regular.woff") format("woff");
   font-style: normal;
   font-weight: normal;
   font-display: swap; }
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+  src: url("../fonts/robotocondensed-regular.woff2") format("woff2"), url("../fonts/robotocondensed-regular.woff") format("woff");
   font-style: normal;
   font-weight: normal;
   font-display: swap; }
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+  src: url("../fonts/robotocondensed-bold.woff2") format("woff2"), url("../fonts/robotocondensed-bold.woff") format("woff");
   font-style: normal;
   font-weight: bold;
   font-display: swap; }
@@ -713,14 +713,17 @@ template {
   @media (max-width: 767px) {
     .navigation button {
       position: absolute;
-      right: 20px;
-      top: 20px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-left: 5px;
-      padding-right: 5px;
+      right: 0;
+      top: 0;
+      padding-top: 28px;
+      padding-bottom: 27px;
+      padding-left: 25px;
+      padding-right: 25px;
       display: block;
-      height: 16px;
+      width: 100%;
+      height: 72px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       color: #c4c4c4; }
       .navigation button:hover, .navigation button:focus {
         color: #00b2ff; }
@@ -730,11 +733,12 @@ template {
 .navigation--nojs button {
   display: none; }
 
-.navigation svg:first-child {
-  display: block; }
-
-.navigation svg:last-child {
-  display: none; }
+.navigation svg {
+  margin-left: auto; }
+  .navigation svg:first-child {
+    display: block; }
+  .navigation svg:last-child {
+    display: none; }
 
 .navigation--opened svg:first-child {
   display: none; }
@@ -835,14 +839,17 @@ template {
   @media (max-width: 767px) {
     .office button {
       position: absolute;
-      right: 20px;
-      top: 20px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-left: 5px;
-      padding-right: 5px;
+      right: 0;
+      top: 0;
+      padding-top: 28px;
+      padding-bottom: 29px;
+      padding-left: 25px;
+      padding-right: 25px;
       display: block;
-      height: 16px;
+      width: 100%;
+      height: 74px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       color: #c4c4c4; }
       .office button:hover, .office button:focus {
         color: #00b2ff; }
@@ -852,11 +859,12 @@ template {
 .office--nojs button {
   display: none; }
 
-.office svg:first-child {
-  display: block; }
-
-.office svg:last-child {
-  display: none; }
+.office svg {
+  margin-left: auto; }
+  .office svg:first-child {
+    display: block; }
+  .office svg:last-child {
+    display: none; }
 
 .office--opened svg:first-child {
   display: none; }
@@ -928,7 +936,7 @@ template {
   padding-bottom: 278px;
   background-color: #1b2d37;
   background-image: url("../img/circuit@1x.png"), url("../img/background-1.svg"), url("../img/background@1x.png");
-  background-size: auto, auto, cover;
+  background-size: 705px 515px, 671px 641px, cover;
   background-position: calc(40% + 555px) 260px, calc(50% + 405px) 120px, center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   overflow: hidden; }
@@ -1215,7 +1223,7 @@ template {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
-.features__feature {
+.features__item {
   margin-bottom: 30px;
   padding-left: 45px;
   padding-right: 40px;
@@ -1230,20 +1238,20 @@ template {
   border-right: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
   border-left: 3px solid #00b2ff; }
-  .features__feature:hover {
+  .features__item:hover {
     background-color: #00b2ff;
     border-top: 1px solid #00b2ff;
     border-right: 1px solid #00b2ff;
     border-bottom: 1px solid #00b2ff; }
   @media (max-width: 1023px) {
-    .features__feature {
+    .features__item {
       padding-left: 27px;
       padding-top: 24px;
       padding-right: 20px;
       padding-bottom: 20px;
       min-height: 230px; } }
   @media (max-width: 767px) {
-    .features__feature {
+    .features__item {
       margin-bottom: 20px;
       padding-left: 22px;
       padding-right: 10px;
@@ -1262,7 +1270,7 @@ template {
     .features svg {
       margin-bottom: 7px; } }
 
-.features__feature:hover svg {
+.features__item:hover svg {
   color: #ffffff; }
 
 .features h3 {
@@ -1281,13 +1289,13 @@ template {
       font-size: 20px;
       line-height: 28px; } }
 
-.features__feature:hover h3 {
+.features__item:hover h3 {
   color: #ffffff; }
 
 .features p {
   margin: 0; }
 
-.features__feature:hover p {
+.features__item:hover p {
   color: #ffffff; }
 
 .features br {
@@ -1490,7 +1498,8 @@ template {
   padding-bottom: 110px;
   background-color: #00b2ff;
   background-image: url("../img/plane@1x.png"), url("../img/background-3.svg");
-  background-position: calc(50% - 355px) 160px, 100% -60px;
+  background-size: 511px 288px, 1891px 765px;
+  background-position: calc(50% - 355px) 160px, calc(50% + 160px) -60px;
   background-repeat: no-repeat, no-repeat; }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
     .feedback {
@@ -1575,8 +1584,7 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 570px;
-  background-color: #00b2ff; }
+  width: 570px; }
   @media (max-width: 1023px) {
     .feedback form {
       margin-left: 0;
@@ -1590,6 +1598,7 @@ template {
               flex-direction: column; } }
 
 .feedback__field-block {
+  position: relative;
   margin-bottom: 41px;
   width: 270px; }
   .feedback__field-block--text {
@@ -1655,6 +1664,13 @@ template {
       padding-left: 16px;
       padding-top: 14px;
       padding-right: 16px; } }
+
+.feedback input[type="checkbox"] {
+  top: 16px;
+  left: 17px; }
+  @media (max-width: 767px) {
+    .feedback input[type="checkbox"] {
+      left: 9px; } }
 
 .feedback__field-block--invalid input:invalid {
   -webkit-box-shadow: inset 0 0 0 1px #ff6666;
@@ -1817,6 +1833,7 @@ template {
   color: #ffffff; }
 
 .callback__field-block {
+  position: relative;
   margin-bottom: 30px; }
   .callback__field-block:last-of-type {
     margin-bottom: 0; }
@@ -1856,6 +1873,10 @@ template {
   .callback input[type="text"]::placeholder,
   .callback input[type="tel"]::placeholder {
     color: #ffffff; }
+
+.callback input[type="checkbox"] {
+  top: 16px;
+  left: 9px; }
 
 .callback__field-block--invalid input:invalid {
   -webkit-box-shadow: inset 0 0 0 1px #ff6666;

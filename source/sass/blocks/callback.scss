@@ -50,6 +50,8 @@
 }
 
 .callback__field-block {
+  position: relative;
+
   margin-bottom: 30px;
 
   &:last-of-type {
@@ -83,6 +85,11 @@
   &::placeholder {
     color: $light-text-color;
   }
+}
+
+.callback input[type="checkbox"] {
+  top: 16px;
+  left: 9px;
 }
 
 .callback__field-block--invalid input:invalid {

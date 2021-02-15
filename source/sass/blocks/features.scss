@@ -29,7 +29,7 @@
   justify-content: space-between;
 }
 
-.features__feature {
+.features__item {
   margin-bottom: 30px;
   padding-left: 45px;
   padding-right: 40px;
@@ -84,7 +84,7 @@
   }
 }
 
-.features__feature:hover svg {
+.features__item:hover svg {
   color: $light-text-color;
 }
 
@@ -108,7 +108,7 @@
   }
 }
 
-.features__feature:hover h3 {
+.features__item:hover h3 {
   color: $light-text-color;
 }
 
@@ -116,7 +116,7 @@
   @include paragraph-style-reset;
 }
 
-.features__feature:hover p {
+.features__item:hover p {
   color: $light-text-color;
 }
 
