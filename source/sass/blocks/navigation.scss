@@ -121,14 +121,17 @@
 
 .navigation li {
   padding-right: 65px;
+  max-width: 150px;
 
   @media (max-width: $tablet-only-width) {
     padding-right: 0;
+    max-width: none;
   }
 }
 
 .navigation--nojs li {
   padding-right: auto;
+  max-width: none;
 }
 
 .navigation a {

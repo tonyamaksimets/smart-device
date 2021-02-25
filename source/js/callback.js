@@ -6,7 +6,7 @@
   if (buttonsOpen) {
     var body = document.querySelector('.page-body');
     var callback = body.querySelector('.callback');
-    var buttonClose = callback.querySelector('button:first-child');
+    var buttonClose = callback.querySelector('button:last-child');
     var callbackName = callback.querySelector('input[type="text"]');
     var callbackTel = callback.querySelector('input[type="tel"]');
     var callbackMessage = callback.querySelector('textarea');
@@ -64,6 +64,7 @@
     };
 
     var openCallback = function (evt) {
+      evt.preventDefault();
       evt.stopPropagation();
       body.style.top = -window.scrollY + 'px';
       body.classList.add('page-body--modal-opened');

@@ -7,8 +7,22 @@
   width: 100vw;
   height: 100vh;
 
+  background-color: rgba($modal-background-color, 0.5);
+
   &--opened {
     display: block;
+  }
+
+  &--page {
+    position: static;
+
+    display: block;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    width: auto;
+    height: auto;
+
+    background-color: $accent-color;
   }
 }
 
@@ -27,6 +41,14 @@
   box-sizing: border-box;
 
   background-color: $accent-color;
+}
+
+.callback--page .callback__wrapper {
+  position: static;
+  transform: none;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .callback h2 {
@@ -72,6 +94,7 @@
 
   background-color: rgba($basic-background-color, 0.1);
   border: none;
+  border-radius: 0;
 
   &:hover {
     background-color: rgba($basic-background-color, 0.3);
@@ -109,6 +132,7 @@
 
   background-color: rgba($basic-background-color, 0.1);
   border: none;
+  border-radius: 0;
 
   resize: none;
 
@@ -130,7 +154,7 @@
   box-shadow: inset 0 0 0 1px $error-color;
 }
 
-.callback button:first-child {
+.callback button:last-child {
   @include button-style-reset;
 
   position: absolute;
@@ -154,6 +178,10 @@
   &:active {
     opacity: 0.3;
   }
+}
+
+.callback--page button:last-child {
+  display: none;
 }
 
 .callback button[type="submit"] {
@@ -207,6 +235,14 @@
 
   padding-left: 50px;
   padding-right: 20px;
+
+  cursor: pointer;
+}
+
+.callback__field-block input[type="checkbox"]:hover + label,
+.callback__field-block input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+  opacity: 1;
 }
 
 .callback__field-block input[type="checkbox"] + label::before {

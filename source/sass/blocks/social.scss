@@ -2,9 +2,16 @@
   @include list-style-reset;
 
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  width: 112px;
+}
+
+.social li {
+  margin-right: 16px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .social a {

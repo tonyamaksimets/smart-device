@@ -157,6 +157,7 @@
 
   background-color: rgba($basic-background-color, 0.1);
   border: none;
+  border-radius: 0;
 
   &:hover {
     background-color: rgba($basic-background-color, 0.3);
@@ -212,6 +213,7 @@
 
   background-color: rgba($basic-background-color, 0.1);
   border: none;
+  border-radius: 0;
 
   resize: none;
 
@@ -299,6 +301,8 @@
   display: block;
 
   padding-left: 40px;
+
+  cursor: pointer;
 
   @media (max-width: $mobile-only-width) {
     padding-left: 32px;

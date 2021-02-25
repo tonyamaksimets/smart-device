@@ -1,6 +1,6 @@
 .services {
   padding-top: 90px;
-  padding-bottom: 127px;
+  padding-bottom: 77px;
 
   background-color: $dark-background-color;
 
@@ -68,7 +68,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 
   @media (max-width: $tablet-only-width) {
     display: block;
@@ -78,14 +78,14 @@
 .services__service {
   margin-right: 15px;
   margin-left: 15px;
-  max-width: 370px;
-  flex-grow: 1;
+  margin-bottom: 50px;
+  width: 370px;
 
   @media (max-width: $tablet-only-width) {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 46px;
-    max-width: none;
+    width: auto;
 
     &:last-child {
       margin-bottom: 0;
@@ -124,9 +124,16 @@
     width: 100%;
     height: 100%;
 
-    background-repeat: no-repeat;
-
     opacity: 0.2;
+
+    background-image: url("../img/produce@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: -340px;
+    background-size: auto 700px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/produce@2x.jpg");
+    }
   }
 
   &:hover::before,
@@ -142,30 +149,20 @@
     padding-top: 43px;
     width: 100%;
     height: 256px;
+
+    &::before {
+      background-position: center;
+      background-size: 110%;
+    }
   }
 
   @media (max-width: $mobile-only-width) {
     padding-left: 35px;
     padding-top: 25px;
-  }
-}
 
-.services__service:first-child a::before {
-  background-image: url("../img/produce@1x.jpg");
-  background-position: -340px;
-  background-size: auto 700px;
-
-  @media (min-resolution: 2dppx) {
-    background-image: url("../img/produce@2x.jpg");
-  }
-
-  @media (max-width: $tablet-only-width) {
-    background-position: center;
-    background-size: 110%;
-  }
-
-  @media (max-width: $mobile-only-width) {
-    background-size: cover;
+    &::before {
+      background-size: cover;
+    }
   }
 }
 
@@ -188,7 +185,7 @@
   }
 }
 
-.services__service:last-child a::before {
+.services__service:nth-child(3) a::before {
   background-image: url("../img/lighting@1x.jpg");
   background-position: -130px;
   background-size: cover;
