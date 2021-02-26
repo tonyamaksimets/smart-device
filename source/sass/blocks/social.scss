@@ -4,12 +4,17 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 200px;
 }
 
 .social li {
   margin-right: 16px;
 
   &:last-child {
+    margin-right: 0;
+  }
+
+  &:nth-child(5n) {
     margin-right: 0;
   }
 }
